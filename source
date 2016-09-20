@@ -1,0 +1,20 @@
+
+import javax.swing.JOptionPane;
+public class Test {
+		public static void main(String[] s){
+			String str = JOptionPane.showInputDialog("Please Enter a String");
+			String num = JOptionPane.showInputDialog("Please Enter the Desired Shift");
+			Integer shift = Integer.parseInt(num);
+
+			String cipher = "";
+			int len = str.length();
+			    for(int x = 0; x < len; x++){
+			        char c = (char)(str.charAt(x) + shift);
+			        if (c > 'z')
+			            cipher += (char)(str.charAt(x) - (26-shift));
+			        else
+			            cipher += (char)(str.charAt(x) + shift); 
+			}
+			    JOptionPane.showMessageDialog(null, cipher);
+		}
+}
